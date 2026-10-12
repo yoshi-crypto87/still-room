@@ -28,8 +28,17 @@ header{
 nav{font-size:12px;letter-spacing:2px;margin-top:10px}
 nav a{color:#555;text-decoration:none;margin-right:20px}
 .hero{
- padding:100px 7% 110px;
- background:#ded9cf;
+ padding:120px 7% 130px;
+ background:
+ linear-gradient(
+ 90deg,
+ rgba(20,15,10,0.65),
+ rgba(20,15,10,0.05)
+ ),
+ url("E730229E-A7FC-499E-B2D9-DB7C077721D8.png");
+ background-size:cover;
+ background-position:center;
+ color:#fff;
 }
 .label{
  font-size:11px;
@@ -87,7 +96,10 @@ footer{
 footer a{color:#eee}
 @media(max-width:700px){
  .grid{grid-template-columns:1fr}
- .hero{padding:85px 7%}
+ .hero{
+ padding:110px 7%;
+ background-position:55% center;
+}
  .visual{height:240px}
 }
 </style>
