@@ -114,6 +114,22 @@ h2{
  overflow:hidden;
 }
 
+.article-link{
+ display:block;
+ color:inherit;
+ text-decoration:none;
+ height:100%;
+}
+
+.article-link:hover .visual{
+ opacity:0.85;
+}
+
+.article-link:hover h3{
+ text-decoration:underline;
+ text-underline-offset:4px;
+}
+
 .visual{
  height:230px;
  display:flex;
@@ -272,55 +288,13 @@ footer p{
 
   <div class="grid">
 
+   <!-- LIGHTING：公開済み記事 -->
    <article class="card">
-    <div class="visual">LIGHTING</div>
-    <div class="card-content">
-     <h3>空間を変える、間接照明の選び方</h3>
-     <p>LIGHTING / COMING SOON</p>
-    </div>
-   </article>
-
-   <article class="card">
-    <div class="visual">FURNITURE</div>
-    <div class="card-content">
-     <h3>長く付き合いたい家具の条件</h3>
-     <p>FURNITURE / COMING SOON</p>
-    </div>
-   </article>
-
-   <article class="card">
-    <div class="visual">OBJECTS</div>
-    <div class="card-content">
-     <h3>暮らしを整える、小さな道具</h3>
-     <p>LIFESTYLE / COMING SOON</p>
-    </div>
-   </article>
-
-  </div>
- </section>
-
- <div class="about" id="about">
-
-  <div class="label">ABOUT STILL ROOM</div>
-
-  <h2>Less noise, more meaning.</h2>
-
-  <p>
-   STILL ROOMは、心地よい空間づくりのための
-   家具・照明・生活雑貨を紹介するメディアです。<br>
-   価格だけでも、ブランドだけでもなく、<br>
-   暮らしになじむものを選んでいきます。
-  </p>
-
- </div>
-
-</main>
-
-<footer>
- <div class="footer-logo">STILL ROOM</div>
- <p>© 2026 STILL ROOM</p>
- <p>※今後、記事内にアフィリエイト広告を掲載する場合があります。</p>
-</footer>
-
-</body>
-</html>
+    <a href="lighting.html" class="article-link">
+     <div class="visual">LIGHTING</div>
+     <div class="card-content">
+      <h3>空間を変える、間接照明の選び方</h3>
+      <p>LIGHTING / READ ARTICLE →</p>
+     </div>
+    </a>
+   </article
