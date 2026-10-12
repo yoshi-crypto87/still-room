@@ -32,10 +32,32 @@ header{
 }
 
 .logo{
- font-family:Georgia,serif;
- font-size:25px;
- font-weight:bold;
- letter-spacing:4px;
+ font-family:Georgia,"Times New Roman",serif;
+ font-size:clamp(28px,6.5vw,44px);
+ font-weight:normal;
+ letter-spacing:0.24em;
+ line-height:1.3;
+
+ background:linear-gradient(
+  110deg,
+  #b89a43 0%,
+  #d8bd70 35%,
+  #a47b28 70%,
+  #80601e 100%
+ );
+
+ -webkit-background-clip:text;
+ background-clip:text;
+ -webkit-text-fill-color:transparent;
+}
+
+.logo::after{
+ content:"";
+ display:block;
+ width:55px;
+ height:1px;
+ margin-top:16px;
+ background:#b89a43;
 }
 
 nav{
@@ -235,8 +257,8 @@ footer p{
  }
 
  .logo{
-  font-size:24px;
- }
+ font-size:clamp(28px,6.5vw,44px);
+}
 
  .hero{
   min-height:580px;
