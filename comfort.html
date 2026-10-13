@@ -9,7 +9,9 @@
 <title>心地よい空間は、素材と余白から。 | STILL ROOM</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+ box-sizing:border-box;
+}
 
 body{
  margin:0;
@@ -76,6 +78,19 @@ h1{
  margin:35px 0 55px;
 }
 
+/* 記事のメイン写真 */
+
+.article-photo{
+ width:100%;
+ aspect-ratio:4/3;
+ margin:40px 0 55px;
+ overflow:hidden;
+ background-image:url("050060B0-4BB3-4CF4-94C8-54D1CD135374.png");
+ background-size:200% 200%;
+ background-position:left bottom;
+ background-repeat:no-repeat;
+}
+
 h2{
  font-size:27px;
  margin:75px 0 25px;
@@ -138,6 +153,7 @@ footer p{
 }
 
 @media(max-width:700px){
+
  .article{
   padding:55px 7% 80px;
  }
@@ -145,6 +161,11 @@ footer p{
  h2{
   font-size:24px;
  }
+
+ .article-photo{
+  aspect-ratio:4/3;
+ }
+
 }
 </style>
 </head>
@@ -177,35 +198,14 @@ footer p{
   上質でありながら、自然体でくつろげる空間には、
   いくつかの共通点があります。
  </p>
-<div style="
- width:100%;
- height:300px;
- overflow:hidden;
- margin:40px 0 55px;
- background-image:url('050060B0-4BB3-4CF4-94C8-54D1CD135374.png');
- background-size:200% 200%;
- background-position:left bottom;
- background-repeat:no-repeat;
-"></div>
- 
- background-image:url('050060B0-4BB3-4CF4-94C8-54D1CD135374.png');
- background-size:200% 200%;
- background-position:left bottom;
- background-repeat:no-repeat;
-"></div>
- <img
-  src="050060B0-4BB3-4CF4-94C8-54D1CD135374.png"
-  alt="木の温もりと自然光を感じる、落ち着いたリビング"
-  style="
-   display:block;
-   width:200%;
-   height:200%;
-   max-width:none;
-   object-fit:fill;
-   transform:translateY(-50%);
-  "
- >
-</div>
+
+ <!-- メイン写真 -->
+ <div
+  class="article-photo"
+  role="img"
+  aria-label="木の温もりと自然光を感じる、落ち着いたリビング">
+ </div>
+
  <p>
   美しい空間と聞くと、
   高価な家具や特別なインテリアを
