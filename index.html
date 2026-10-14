@@ -8,55 +8,7 @@
 
 <title>STILL ROOM | 静けさと、心地よさを選ぶ。</title>
 
-<style>/* 写真の下の白いタイトル欄を非表示 */
-.card-content{
- display:none;
-}
-/* 寝室の記事のタイトル */
-.card:nth-child(5){
- position:relative;
-}
-
-.card:nth-child(5) .card-content{
- display:flex;
- flex-direction:column;
- justify-content:flex-end;
- position:absolute;
- inset:0;
- padding:35px;
- color:white;
- background:linear-gradient(
-  transparent 45%,
-  rgba(0,0,0,0.65) 100%
- );
- z-index:2;
- pointer-events:none;
-}
-
-.card:nth-child(5) .card-content h3{
- order:2;
- font-family:Georgia,"Hiragino Mincho ProN",serif;
- font-size:24px;
- font-weight:normal;
- line-height:1.7;
- margin:15px 0 25px;
-}
-
-.card:nth-child(5) .card-content p{
- order:1;
- color:#eee;
- font-size:11px;
- letter-spacing:2px;
-}
-/* 写真だけのカードにする */
-.card{
- background:transparent;
-}
-
-/* 写真全体をタップできるようにする */
-.article-link{
- display:block;
-}
+<style>
 *{
  box-sizing:border-box;
 }
@@ -127,6 +79,7 @@ nav a{
  align-items:center;
  padding:100px 7%;
  color:#fff;
+
  background-image:
  linear-gradient(
   90deg,
@@ -135,6 +88,7 @@ nav a{
   rgba(18,14,10,0.10) 100%
  ),
  url("E730229E-A7FC-499E-B2D9-DB7C077721D8.png");
+
  background-size:cover;
  background-position:center;
 }
@@ -187,16 +141,19 @@ h2{
  gap:25px;
 }
 
+/* 記事カード */
+
 .card{
- background:#fff;
+ position:relative;
  overflow:hidden;
+ background:transparent;
 }
 
 .article-link{
  display:block;
+ position:relative;
  color:inherit;
  text-decoration:none;
- height:100%;
 }
 
 .visual{
@@ -207,51 +164,52 @@ h2{
  background:#d9d2c7;
 }
 
-/* 5枚の写真を1枚の画像から切り出す */
+/* 写真 */
 
 .visual::before{
  content:"";
  position:absolute;
  inset:0;
+
  background-image:url("050060B0-4BB3-4CF4-94C8-54D1CD135374.png");
  background-repeat:no-repeat;
+
  transition:transform .5s ease;
 }
 
-/* 上段左：LIGHTING */
+/* LIGHTING */
 .card:nth-child(1) .visual::before{
  background-size:300% 200%;
  background-position:0% 0%;
 }
 
-/* 上段中央：FURNITURE */
+/* FURNITURE */
 .card:nth-child(2) .visual::before{
  background-size:300% 200%;
  background-position:50% 0%;
 }
 
-/* 上段右：OBJECTS */
+/* OBJECTS */
 .card:nth-child(3) .visual::before{
  background-size:300% 200%;
  background-position:100% 0%;
 }
 
-/* 下段左：INTERIOR */
+/* INTERIOR */
 .card:nth-child(4) .visual::before{
  background-image:url("0DF654F1-BB15-4471-80C3-A5EC74AF2280.png");
  background-size:cover;
  background-position:left center;
- background-repeat:no-repeat;
 }
-/* 5枚目：BEDROOM */
+
+/* BEDROOM */
 .card:nth-child(5) .visual::before{
  background-image:url("63BE81B7-887D-4770-9042-62371A36AAFD.png");
  background-size:cover;
  background-position:center;
- background-repeat:no-repeat;
 }
 
-/* 6枚目：TABLE LAMP */
+/* TABLE LAMP */
 .card:nth-child(6) .visual::before{
  background-size:200% 200%;
  background-position:100% 100%;
@@ -261,22 +219,70 @@ h2{
  transform:scale(1.04);
 }
 
+/* 通常の記事は既存の写真デザインを維持 */
+
 .card-content{
- padding:25px;
+ display:none;
 }
 
-.card h3{
- margin:0 0 12px;
- font-size:17px;
- font-weight:500;
- line-height:1.7;
+/* 寝室の記事だけタイトルを重ねる */
+
+.card:nth-child(5) .card-content{
+ display:flex;
+ flex-direction:column;
+ justify-content:flex-end;
+
+ position:absolute;
+ inset:0;
+
+ padding:35px;
+ color:#fff;
+
+ background:linear-gradient(
+  transparent 40%,
+  rgba(0,0,0,0.65) 100%
+ );
+
+ pointer-events:none;
 }
 
-.card p{
- margin:0;
- color:#817b72;
+/* カテゴリー */
+
+.bedroom-category{
+ order:1;
+ margin:0 0 15px;
+
+ font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
  font-size:11px;
- letter-spacing:1px;
+ font-weight:normal;
+ letter-spacing:3px;
+ color:#eee;
+}
+
+/* 日本語タイトル */
+
+.card:nth-child(5) .card-content h3{
+ order:2;
+ margin:0 0 25px;
+
+ font-family:Georgia,"Hiragino Mincho ProN","Yu Mincho",serif;
+ font-size:clamp(18px,3.5vw,24px);
+ font-weight:normal;
+ line-height:1.7;
+ letter-spacing:0;
+}
+
+/* READ ARTICLE */
+
+.bedroom-read{
+ order:3;
+ margin:0;
+
+ font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+ font-size:11px;
+ font-weight:normal;
+ letter-spacing:2px;
+ color:#eee;
 }
 
 .about{
@@ -313,14 +319,11 @@ footer p{
   padding:24px 7%;
  }
 
- .logo{
- font-size:clamp(28px,6.5vw,44px);
-}
-
  .hero{
   min-height:580px;
   padding:75px 7%;
   background-position:55% center;
+
   background-image:
    linear-gradient(
     90deg,
@@ -347,54 +350,34 @@ footer p{
   gap:22px;
  }
 
- .visual{
-  aspect-ratio:1 / 1;
- }
-
  .about{
   padding:75px 7%;
  }
 
-}}
+ .card:nth-child(5) .card-content{
+  padding:30px;
+ }
 
-/* 寝室カードの文字配置 */
-.card:nth-child(5) .bedroom-category{
- order:1;
- font-size:11px;
- letter-spacing:3px;
- margin:0 0 12px;
+ .card:nth-child(5) .card-content h3{
+  font-size:20px;
+ }
+
 }
-
-.card:nth-child(5) .card-content h3{
- order:2;
- font-family:Georgia,"Hiragino Mincho ProN",serif;
- font-size:24px;
- font-weight:normal;
- line-height:1.7;
- margin:0 0 24px;
-}
-
-.card:nth-child(5) .bedroom-read{
- order:3;
- font-size:11px;
- letter-spacing:2px;
- margin:0;
-}
-
-</style>
 </style>
 </head>
 
 <body>
 
 <header>
+
  <div class="logo">STILL ROOM</div>
 
-<nav>
+ <nav>
   <a href="#stories">JOURNAL</a>
   <a href="#about">ABOUT</a>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSepLN0WE_skQnHHUJnXPKT0ekDm8SHMRDtKvwCB8ae2pyOiew/viewform" target="_blank" rel="noopener noreferrer">CONTACT</a>
-</nav>
+ </nav>
+
 </header>
 
 <div class="hero">
@@ -463,27 +446,31 @@ footer p{
    </a>
   </article>
 
-  <!-- COMFORTABLE LIVING -->
-<article class="card">
-<a href="hotel-style.html" class="article-link">
+  <!-- INTERIOR -->
+  <article class="card">
+   <a href="hotel-style.html" class="article-link">
     <div class="visual"></div>
     <div class="card-content">
-   <h3>心地よい空間をつくる、5つのポイント。</h3>
+     <h3>心地よい空間をつくる、5つのポイント。</h3>
      <p>INTERIOR / READ ARTICLE →</p>
     </div>
    </a>
   </article>
+
   <!-- BEDROOM -->
   <article class="card">
    <a href="interior.html" class="article-link">
     <div class="visual"></div>
+
     <div class="card-content">
-     <h3>心地よい寝室をつくる、5つの工夫。</h3>
      <p class="bedroom-category">BEDROOM</p>
-<p class="bedroom-read">READ ARTICLE →</p>
+     <h3>心地よい寝室をつくる、5つの工夫。</h3>
+     <p class="bedroom-read">READ ARTICLE →</p>
     </div>
+
    </a>
   </article>
+
   <!-- TABLE LAMP -->
   <article class="card">
    <a href="table-lamp.html" class="article-link">
@@ -539,13 +526,15 @@ footer p{
  <p>© 2026 STILL ROOM</p>
 
  <p>
-※当サイトはアフィリエイト広告を利用しています。
+  ※当サイトはアフィリエイト広告を利用しています。
  </p>
-<p>
- <a href="privacy.html" style="color:#c8c2ba;text-decoration:none;border-bottom:1px solid #c8c2ba;">
-  PRIVACY POLICY
- </a>
-</p>
+
+ <p>
+  <a href="privacy.html" style="color:#c8c2ba;text-decoration:none;border-bottom:1px solid #c8c2ba;">
+   PRIVACY POLICY
+  </a>
+ </p>
+
 </footer>
 
 </body>
