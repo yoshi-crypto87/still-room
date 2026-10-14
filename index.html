@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="description" content="STILL ROOMは、心地よい暮らしのための家具・照明・インテリアを紹介するライフスタイルメディアです。">
+<meta name="description" content="STILL ROOMは、家具・照明・インテリアを通して、上質で落ち着いた暮らしのヒントを届けるライフスタイルメディアです。">
 
 <title>STILL ROOM | 静けさと、心地よさを選ぶ。</title>
 
@@ -141,7 +141,7 @@ h2{
  gap:25px;
 }
 
-/* 記事カード */
+/* 記事カード共通 */
 
 .card{
  position:relative;
@@ -164,16 +164,12 @@ h2{
  background:#d9d2c7;
 }
 
-/* 写真 */
-
 .visual::before{
  content:"";
  position:absolute;
  inset:0;
-
  background-image:url("050060B0-4BB3-4CF4-94C8-54D1CD135374.png");
  background-repeat:no-repeat;
-
  transition:transform .5s ease;
 }
 
@@ -219,28 +215,22 @@ h2{
  transform:scale(1.04);
 }
 
-/* 通常の記事は既存の写真デザインを維持 */
+/* 6枚すべての文字デザインを統一 */
 
 .card-content{
- display:none;
-}
-
-/* 寝室の記事だけタイトルを重ねる */
-
-.card:nth-child(5) .card-content{
+ position:absolute;
+ inset:0;
  display:flex;
  flex-direction:column;
  justify-content:flex-end;
-
- position:absolute;
- inset:0;
-
- padding:35px;
+ padding:28px;
  color:#fff;
 
  background:linear-gradient(
-  transparent 40%,
-  rgba(0,0,0,0.65) 100%
+  to bottom,
+  rgba(0,0,0,0) 35%,
+  rgba(0,0,0,0.08) 50%,
+  rgba(0,0,0,0.68) 100%
  );
 
  pointer-events:none;
@@ -248,41 +238,38 @@ h2{
 
 /* カテゴリー */
 
-.bedroom-category{
- order:1;
- margin:0 0 15px;
-
+.card-category{
+ margin:0 0 12px;
  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
  font-size:11px;
  font-weight:normal;
- letter-spacing:3px;
- color:#eee;
+ letter-spacing:2.5px;
+ line-height:1.5;
+ color:#fff;
 }
 
-/* 日本語タイトル */
+/* タイトル */
 
-.card:nth-child(5) .card-content h3{
- order:2;
- margin:0 0 25px;
-
+.card-content h3{
+ margin:0 0 18px;
  font-family:Georgia,"Hiragino Mincho ProN","Yu Mincho",serif;
- font-size:clamp(22px,5vw,28px);
+ font-size:clamp(18px,2.2vw,25px);
  font-weight:normal;
- line-height:1.7;
- letter-spacing:0;
+ line-height:1.55;
+ letter-spacing:0.02em;
+ color:#fff;
 }
 
 /* READ ARTICLE */
 
-.bedroom-read{
- order:3;
+.card-read{
  margin:0;
-
  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
  font-size:11px;
  font-weight:normal;
  letter-spacing:2px;
- color:#eee;
+ line-height:1.5;
+ color:#fff;
 }
 
 .about{
@@ -350,16 +337,16 @@ footer p{
   gap:22px;
  }
 
+ .card-content{
+  padding:26px;
+ }
+
+ .card-content h3{
+  font-size:clamp(21px,5.5vw,27px);
+ }
+
  .about{
   padding:75px 7%;
- }
-
- .card:nth-child(5) .card-content{
-  padding:30px;
- }
-
- .card:nth-child(5) .card-content h3{
-  font-size:20px;
  }
 
 }
@@ -369,7 +356,6 @@ footer p{
 <body>
 
 <header>
-
  <div class="logo">STILL ROOM</div>
 
  <nav>
@@ -377,11 +363,9 @@ footer p{
   <a href="#about">ABOUT</a>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSepLN0WE_skQnHHUJnXPKT0ekDm8SHMRDtKvwCB8ae2pyOiew/viewform" target="_blank" rel="noopener noreferrer">CONTACT</a>
  </nav>
-
 </header>
 
 <div class="hero">
-
  <div class="hero-content">
 
   <div class="label">
@@ -400,7 +384,6 @@ footer p{
   </p>
 
  </div>
-
 </div>
 
 <section id="stories">
@@ -418,8 +401,9 @@ footer p{
    <a href="lighting.html" class="article-link">
     <div class="visual"></div>
     <div class="card-content">
-     <h3>空間を変える、間接照明の選び方</h3>
-     <p>LIGHTING / READ ARTICLE →</p>
+     <p class="card-category">LIGHTING</p>
+     <h3>光と影で、空間を整える。</h3>
+     <p class="card-read">READ ARTICLE →</p>
     </div>
    </a>
   </article>
@@ -429,8 +413,9 @@ footer p{
    <a href="furniture.html" class="article-link">
     <div class="visual"></div>
     <div class="card-content">
-     <h3>長く付き合いたい家具の条件</h3>
-     <p>FURNITURE / READ ARTICLE →</p>
+     <p class="card-category">FURNITURE</p>
+     <h3>長く愛せる家具の選び方。</h3>
+     <p class="card-read">READ ARTICLE →</p>
     </div>
    </a>
   </article>
@@ -440,8 +425,9 @@ footer p{
    <a href="objects.html" class="article-link">
     <div class="visual"></div>
     <div class="card-content">
-     <h3>暮らしを整える、小さな道具</h3>
-     <p>LIFESTYLE / READ ARTICLE →</p>
+     <p class="card-category">OBJECTS</p>
+     <h3>暮らしになじむ、小さな道具。</h3>
+     <p class="card-read">READ ARTICLE →</p>
     </div>
    </a>
   </article>
@@ -451,8 +437,9 @@ footer p{
    <a href="hotel-style.html" class="article-link">
     <div class="visual"></div>
     <div class="card-content">
-     <h3>心地よい空間をつくる、5つのポイント。</h3>
-     <p>INTERIOR / READ ARTICLE →</p>
+     <p class="card-category">INTERIOR</p>
+     <h3>上質な空間をつくる、5つのヒント。</h3>
+     <p class="card-read">READ ARTICLE →</p>
     </div>
    </a>
   </article>
@@ -461,13 +448,11 @@ footer p{
   <article class="card">
    <a href="interior.html" class="article-link">
     <div class="visual"></div>
-
     <div class="card-content">
-     <p class="bedroom-category">BEDROOM</p>
-    <h3>心地よい寝室をつくる、<br>5つの工夫。</h3>
-     <p class="bedroom-read">READ ARTICLE →</p>
+     <p class="card-category">BEDROOM</p>
+     <h3>心地よい寝室をつくる、5つの工夫。</h3>
+     <p class="card-read">READ ARTICLE →</p>
     </div>
-
    </a>
   </article>
 
@@ -476,14 +461,14 @@ footer p{
    <a href="table-lamp.html" class="article-link">
     <div class="visual"></div>
     <div class="card-content">
-     <h3>テーブルランプの選び方｜心地よい空間をつくる照明</h3>
-     <p>LIGHTING / READ ARTICLE →</p>
+     <p class="card-category">TABLE LAMP</p>
+     <h3>暮らしを照らす、テーブルランプ。</h3>
+     <p class="card-read">READ ARTICLE →</p>
     </div>
    </a>
   </article>
 
  </div>
-
 </section>
 
 <div class="about" id="about">
@@ -525,9 +510,7 @@ footer p{
 
  <p>© 2026 STILL ROOM</p>
 
- <p>
-  ※当サイトはアフィリエイト広告を利用しています。
- </p>
+ <p>※当サイトはアフィリエイト広告を利用しています。</p>
 
  <p>
   <a href="privacy.html" style="color:#c8c2ba;text-decoration:none;border-bottom:1px solid #c8c2ba;">
